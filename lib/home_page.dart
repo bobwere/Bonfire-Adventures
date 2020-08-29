@@ -9,7 +9,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:dart_random_choice/dart_random_choice.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+  final BuildContext menuScreenContext;
+  final Function onScreenHideButtonPressed;
+  final bool hideStatus;
+  const HomePage(
+      {Key key,
+      this.menuScreenContext,
+      this.onScreenHideButtonPressed,
+      this.hideStatus = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,21 @@ class HomePage extends StatelessWidget {
             GreetingAndProfilePicRow(),
             SizedBox(height: 10.h),
             Txt('Discover', style: kHomePageDiscoverTxtStyle),
-            CategoryHorizontalListView()
+            CategoryHorizontalListView(),
+            Center(
+              child: RaisedButton(
+                color: Colors.purpleAccent,
+                onPressed: () {
+                  this.onScreenHideButtonPressed();
+                },
+                child: Text(
+                  this.hideStatus
+                      ? "Unhide Navigation Bar"
+                      : "Hide Navigation Bar",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
           ]),
     );
   }
