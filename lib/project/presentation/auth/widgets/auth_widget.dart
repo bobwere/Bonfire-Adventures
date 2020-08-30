@@ -6,6 +6,7 @@ import 'package:bonfire_adventures/project/presentation/auth/widgets/home_widget
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/services.dart';
 
 class AuthWidget extends StatelessWidget {
   const AuthWidget({Key key}) : super(key: key);
@@ -19,6 +20,7 @@ class AuthWidget extends StatelessWidget {
       return state.map(uninitialized: (_) {
         return SplashPage();
       }, authenticated: (_) {
+        showStatusBar();
         return HomeWidget();
       }, unauthenticated: (_) {
         return LoginPage();
@@ -27,4 +29,8 @@ class AuthWidget extends StatelessWidget {
       });
     });
   }
+}
+
+showStatusBar() async {
+  await SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
 }

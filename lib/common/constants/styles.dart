@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const kBackgroundColor = Color(0xFF2B5740);
+const kGrayColor = Color(0xFFCFCFD1);
 const gradientTopColor = Color(0xFF80EBA8);
 const gradientBottomColor = Color(0xFF2B5740);
 const kShadowColor = Color(0xFFA5D6C4);
@@ -77,8 +78,8 @@ final kSeeAllTextStyle = TxtStyle()
 
 final kDestinationCardStyle = ParentStyle()
   ..background.color(Colors.white)
-  ..height(300.h)
-  ..width(210.h)
+  ..height(350.h)
+  ..width(250.h)
   ..borderRadius(all: 15.h)
   ..margin(bottom: 15.h, right: 12.5.h)
   ..alignment.centerLeft()

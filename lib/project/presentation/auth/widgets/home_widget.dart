@@ -1,3 +1,4 @@
+import 'package:bonfire_adventures/common/constants/styles.dart';
 import 'package:bonfire_adventures/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -82,22 +83,22 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
     PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.home),
         title: ("Home"),
-        activeColor: CupertinoColors.activeBlue,
+        activeColor: kBackgroundColor,
         inactiveColor: CupertinoColors.systemGrey),
     PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.search),
         title: ("Search"),
-        activeColor: CupertinoColors.activeBlue,
+        activeColor: kBackgroundColor,
         inactiveColor: CupertinoColors.systemGrey),
     PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.heart),
         title: ("Favourites"),
-        activeColor: CupertinoColors.activeBlue,
+        activeColor: kBackgroundColor,
         inactiveColor: CupertinoColors.systemGrey),
     PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.profile_circled),
         title: ("Profile"),
-        activeColor: CupertinoColors.activeBlue,
+        activeColor: kBackgroundColor,
         inactiveColor: CupertinoColors.systemGrey),
   ];
 }
