@@ -66,6 +66,9 @@ flutter:
 
     assets:
         - assets/images/logo.png
+        - assets/images/logo.png
+        - assets/images/banners/green_sands_banner.png
+        - assets/images/banners/yellow_book_a_trip.png
         - assets/images/gooey_edge/Bg-Blue.png
         - assets/images/gooey_edge/Bg-Red.png
         - assets/images/gooey_edge/Bg-Yellow.png

@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:bonfire_adventures/project/application/auth/auth_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeWidget extends StatefulWidget {
   final BuildContext menuScreenContext;
@@ -24,7 +26,8 @@ class _HomeWidgetState extends State<HomeWidget> {
     _hideNavBar = false;
   }
 
-  List<Widget> _buildScreens() {
+  List<Widget> _buildScreens(BuildContext context) {
+    final AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
     return [
       HomePage(
         menuScreenContext: widget.menuScreenContext,
@@ -37,16 +40,37 @@ class _HomeWidgetState extends State<HomeWidget> {
       ),
       Container(color: Colors.redAccent),
       Container(color: Colors.orangeAccent),
-      Container(color: Colors.greenAccent),
+      Container(
+        color: Colors.greenAccent,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 150.h,
+            ),
+            MaterialButton(
+                color: Colors.redAccent,
+                child: Text(
+                  "Log Out",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  authCubit.logOut();
+                }),
+          ],
+        ),
+      ),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 480, height: 854, allowFontScaling: true);
+
     return PersistentTabView(
+      navBarHeight: 50,
+      iconSize: 28,
       controller: _controller,
-      screens: _buildScreens(),
+      screens: _buildScreens(context),
       items: _navBarsItems(),
       confineInSafeArea: true,
       backgroundColor: Colors.white,

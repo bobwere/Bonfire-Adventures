@@ -15,7 +15,12 @@ class _DestinationCardState extends State<DestinationCard> {
   @override
   Widget build(BuildContext context) {
     return Parent(
-      style: kDestinationCardStyle,
+      style: kDestinationCardStyle.clone()
+        ..boxShadow(
+          color: Colors.black26,
+          offset: Offset(3.5.h, 3.5.h),
+          blur: 3.5.h,
+        ),
       child: Column(children: [
         //Image from database
         Parent(

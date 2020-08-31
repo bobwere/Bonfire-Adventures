@@ -1,5 +1,5 @@
 import 'package:bonfire_adventures/common/constants/styles.dart';
-import 'package:bonfire_adventures/project/presentation/auth/pages/Experiences_tab.dart';
+import 'package:bonfire_adventures/project/presentation/auth/pages/popular_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,7 +16,7 @@ class _HomePageTabBarState extends State<HomePageTabBar>
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 4, vsync: this);
+    _controller = TabController(length: 6, vsync: this);
   }
 
   @override
@@ -50,13 +50,19 @@ class _HomePageTabBarState extends State<HomePageTabBar>
               text: "Popular",
             ),
             Tab(
-              text: "Experiences",
+              text: "Domestic",
             ),
             Tab(
-              text: "Sights",
+              text: "International",
             ),
             Tab(
-              text: "Housings",
+              text: "Destinations",
+            ),
+            Tab(
+              text: "Holiday Types",
+            ),
+            Tab(
+              text: "Honeymoon",
             ),
           ],
         ),
@@ -65,7 +71,7 @@ class _HomePageTabBarState extends State<HomePageTabBar>
           child: TabBarView(
             controller: _controller,
             children: <Widget>[
-              ExperiencesTab(),
+              PopularTab(),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
@@ -81,7 +87,19 @@ class _HomePageTabBarState extends State<HomePageTabBar>
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.greenAccent,
+                  color: Colors.redAccent,
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: Colors.purpleAccent,
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: Colors.amber,
                 ),
               ),
             ],

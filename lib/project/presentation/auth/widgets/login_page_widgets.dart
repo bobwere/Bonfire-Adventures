@@ -80,17 +80,18 @@ ActorWidget greetingText(
       waitBeforeStart: Duration(milliseconds: 50),
       opacity: ActorOpacity(opacity: 1),
       position: ActorPosition(
-          top: 230.h,
-          bottom: -230.h,
+          top: 180.h,
+          bottom: -180.h,
           right: -20.h,
           left: 20.h,
           curve: Curves.elasticOut,
           duration: Duration(milliseconds: 1500)),
       character: ActorCharacter(
-          child: Txt(
-        greeting,
-        style: kLoginGreetingTextStyle,
-      )),
+        child: Txt(
+          greeting,
+          style: kLoginGreetingTextStyle,
+        ),
+      ),
     )
   ]);
 }

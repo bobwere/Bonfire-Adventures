@@ -2,7 +2,6 @@ import 'package:bonfire_adventures/common/constants/strings.dart';
 import 'package:bonfire_adventures/common/constants/styles.dart';
 import 'package:bonfire_adventures/project/application/auth/auth_cubit.dart';
 import 'package:bonfire_adventures/project/presentation/auth/widgets/home_page_tabbar.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +30,8 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 50.h),
             GreetingAndProfilePicRow(),
             SizedBox(height: 10.h),
-            Txt('Discover', style: kHomePageDiscoverTxtStyle),
+            Txt('Discover exciting\ndestinations with us',
+                style: kHomePageDiscoverTxtStyle),
             HomePageTabBar(),
           ]),
     );

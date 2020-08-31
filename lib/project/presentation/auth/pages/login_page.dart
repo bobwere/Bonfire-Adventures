@@ -33,16 +33,20 @@ class _LoginPageState extends State<LoginPage> {
               initial: (_) {},
               submitting: (_) {
                 Get.snackbar('Trying to login...', 'Please wait a moment',
-                    colorText: Colors.white, backgroundColor: Colors.green);
+                    margin: EdgeInsets.only(top: 20.h, left: 20, right: 20.h),
+                    colorText: Colors.white,
+                    backgroundColor: Colors.green);
               },
               success: (_) {
-                // context.bloc<AuthCubit>().logIn();
                 Get.snackbar('Successfully logged in', 'Please wait a second',
-                    colorText: Colors.white, backgroundColor: Colors.green);
+                    margin: EdgeInsets.only(top: 20.h, left: 20, right: 20.h),
+                    colorText: Colors.white,
+                    backgroundColor: Colors.green);
                 authCubit.logIn();
               },
               failure: (state) {
                 Get.snackbar('An Error Occurred', '${state.failure}',
+                    margin: EdgeInsets.only(top: 20.h, left: 20, right: 20.h),
                     colorText: Colors.white,
                     backgroundColor: Color(0xFFFD9726));
               });

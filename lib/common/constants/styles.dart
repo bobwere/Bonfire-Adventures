@@ -41,15 +41,15 @@ final kLoginButtonTextStyle = TxtStyle()
 
 final kLoginGreetingTextStyle = TxtStyle()
   ..fontFamily('Poppins')
-  ..fontSize(40.sp)
+  ..fontSize(30.sp)
   ..bold(true)
-  ..textColor(Colors.black)
+  ..textColor(Colors.black87)
   ..fontWeight(FontWeight.w900);
 
 final kHomePageDiscoverTxtStyle = TxtStyle()
   ..fontFamily('Gotham')
   ..fontWeight(FontWeight.w800)
-  ..fontSize(35.sp)
+  ..fontSize(27.sp)
   ..padding(horizontal: 20.h)
   ..textColor(Colors.black87);
 
